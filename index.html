@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 Production/Warranty – Women’s Order Form</title>
+
+  <style>
+    :root {
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d8dee9;
+      --soft: #f7f9fc;
+      --brand: #1f4e79;
+      --brand-soft: #eaf1f8;
+      --danger: #b91c1c;
+      --warning: #fff7ed;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #eef1f6;
+      color: var(--ink);
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 28px auto;
+      background: white;
+      padding: 36px 44px 50px;
+      border-radius: 16px;
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.12);
+    }
+
+    .header {
+      border-bottom: 4px solid var(--brand);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      margin: 0 0 8px;
+      font-weight: 600;
+    }
+
+    .subhead {
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .employee-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--soft);
+      padding: 18px;
+      margin-bottom: 24px;
+    }
+
+    .employee-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--brand);
+    }
+
+    .top-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 220px;
+      gap: 14px;
+      align-items: end;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #475569;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 10px 11px;
+      font-size: 14px;
+      background: white;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .notice {
+      padding: 14px 16px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--brand);
+      border-radius: 12px;
+      margin-bottom: 22px;
+      color: #334155;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .product {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 22px 0;
+      background: #fff;
+    }
+
+    .product-bar {
+      background: var(--brand-soft);
+      border-bottom: 1px solid var(--line);
+      padding: 15px 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .product-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #163b5c;
+    }
+
+    .item-number {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .product-body {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 20px;
+      padding: 18px;
+    }
+
+    .product-image {
+      width: 210px;
+      min-height: 210px;
+      border: 1px dashed #cbd5e1;
+      border-radius: 14px;
+      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 12px;
+      padding: 12px;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .table-block {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .table-title {
+      background: #f8fafc;
+      padding: 10px 12px;
+      font-weight: 700;
+      font-size: 13px;
+      color: #334155;
+      border-bottom: 1px solid var(--line);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th, td {
+      border-bottom: 1px solid #edf1f7;
+      padding: 9px 10px;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      background: #fcfdff;
+      color: #475569;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .qty-input {
+      width: 80px;
+      min-width: 80px;
+      padding: 7px 8px;
+      text-align: center;
+    }
+
+    .color-select-wrap {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 9px;
+      align-items: center;
+    }
+
+    .swatch {
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+    }
+
+    .note-blue {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e3a8a;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .note-red {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: var(--danger);
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+
+    .small-muted {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    .summary-panel {
+      display: grid;
+      grid-template-columns: 1fr 230px;
+      gap: 18px;
+      margin-top: 26px;
+      border-top: 3px solid var(--brand);
+      padding-top: 20px;
+    }
+
+    .total-box {
+      background: var(--warning);
+      border: 1px solid #fed7aa;
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .total-box strong {
+      display: block;
+      font-size: 34px;
+      color: #9a3412;
+      margin-top: 6px;
+    }
+
+    .actions {
+      position: sticky;
+      bottom: 0;
+      background: rgba(255,255,255,0.96);
+      padding: 16px 0 0;
+      margin-top: 22px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    button {
+      border: none;
+      background: var(--brand);
+      color: white;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .status {
+      font-size: 13px;
+      color: var(--muted);
+      margin-right: auto;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        margin: 0;
+        border-radius: 0;
+        padding: 22px;
+      }
+
+      .top-grid,
+      .product-body,
+      .summary-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        width: 100%;
+        min-height: 220px;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .status { margin-right: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <form class="page" id="orderForm">
+    <div class="header">
+      <h1>2026 Production/Warranty – Women’s Order Form</h1>
+      <p class="subhead">Women’s employee apparel selection form with product images, color dropdowns, size dropdowns, and quantity fields.</p>
+    </div>
+
+    <div class="employee-card">
+      <div class="employee-title">Employee Information</div>
+
+      <div class="top-grid">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" required />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+
+        <div>
+          <label for="location">Location</label>
+          <select id="location" name="location" required>
+            <option value="">Select location</option>
+            <option>DFW</option>
+            <option>Austin</option>
+            <option>San Antonio</option>
+            <option>Houston</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="notice">
+      Builders and Warranty employees receive up to <strong>5 shirts per year</strong>. Select the color, size, and quantity needed for each item.
+    </div>
+
+    <div id="products"></div>
+
+    <div class="summary-panel">
+      <div>
+        <label for="notes">Additional Notes / Special Instructions</label>
+        <textarea id="notes" name="notes" placeholder="Add any special sizing, delivery, or order notes here."></textarea>
+      </div>
+
+      <div class="total-box">
+        Total Quantity Selected
+        <strong id="totalQty">0</strong>
+        <div class="small-muted">This is a visual guide only.</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <span class="status" id="status">Ready to submit.</span>
+      <button type="button" onclick="submitOrder()">Submit Order</button>
+    </div>
+  </form>
+
+  <script>
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzUgiQkWVGC1W9-dD01eY1CDXwOZtg-shaknJINchvDfJ1VxXxdAEC-w8O69zYohVTF/exec';
+
+    const WOMENS_SIZES = ['XS', 'S', 'M', 'L', 'XL', '2XL'];
+
+    const products = [
+      {
+        number: 1,
+        title: 'Under Armour Tech Polo Shirt',
+        item: 'UA Women’s Tech Polo',
+        key: 'womens_under_armour_tech_polo',
+        image: 'https://i.imgur.com/mlD2IxD.jpeg',
+        sizes: WOMENS_SIZES,
+        colors: [
+          { name: 'White/Graphite', hex: '#f8fafc' },
+          { name: 'Graphite/Black', hex: '#4b5563' },
+          { name: 'Royal/Graphite', hex: '#1d4ed8' },
+          { name: 'Red/Graphite', hex: '#dc2626' },
+          { name: 'Navy/Graphite', hex: '#172554' },
+          { name: 'Black/Graphite', hex: '#111827' }
+        ]
+      },
+      {
+        number: 2,
+        title: 'Port Authority Women’s Dimension Knit Dress Shirt',
+        item: 'Port Authority Women’s Dimension Knit Dress Shirt',
+        key: 'womens_port_authority_dimension_knit',
+        image: 'https://i.imgur.com/p9lCWmr.jpeg',
+        sizes: WOMENS_SIZES,
+        colors: [
+          { name: 'Battleship Grey', hex: '#4b5563' },
+          { name: 'Dark Navy', hex: '#1f2937' },
+          { name: 'Black', hex: '#111827' }
+        ]
+      },
+      {
+        number: 3,
+        title: 'OGIO Jewel Polo',
+        item: 'LOG101',
+        key: 'womens_ogio_jewel_polo',
+        image: 'https://i.imgur.com/kTmFQez.jpeg',
+        sizes: WOMENS_SIZES,
+        colors: [
+          { name: 'Blacktop', hex: '#111827' },
+          { name: 'Blue Mist', hex: '#6f9eb0' },
+          { name: 'Bright White', hex: '#ffffff' },
+          { name: 'Diesel Grey', hex: '#55595c' },
+          { name: 'Electric Blue', hex: '#1766a6' },
+          { name: 'Navy', hex: '#0b2f4f' }
+        ]
+      },
+      {
+        number: 4,
+        title: 'North End Ladies Rain Jacket',
+        item: 'North End Ladies Rain Jacket',
+        key: 'womens_north_end_ladies_rain_jacket',
+        image: 'https://i.imgur.com/31YBnXP.jpeg',
+        sizes: WOMENS_SIZES,
+        blueNote: 'Optional jacket selection: You may select this OR the Eddie Bauer jacket in addition to your 5 shirts.',
+        redNote: 'This item will be ordered after employee’s 90 day review.',
+        colors: [
+          { name: 'Black', hex: '#111827' },
+          { name: 'Midnight Navy', hex: '#0f2f4a' }
+        ]
+      },
+      {
+        number: 5,
+        title: 'Eddie Bauer Jacket',
+        item: 'EB543',
+        key: 'womens_eddie_bauer_jacket',
+        image: 'https://i.imgur.com/0ipPleq.jpeg',
+        sizes: WOMENS_SIZES,
+        blueNote: 'Optional jacket selection: You may select this OR the North End jacket in addition to your 5 shirts.',
+        redNote: 'This item will be ordered after employee’s 90 day review.',
+        colors: [
+          { name: 'Black', hex: '#111827' },
+          { name: 'Metal Grey/Grey Steel', hex: '#6b7280' },
+          { name: 'River Blue Navy', hex: '#132f4c' }
+        ]
+      }
+    ];
+
+    function renderProducts() {
+      const mount = document.getElementById('products');
+      mount.innerHTML = '';
+
+      products.forEach(product => {
+        const section = document.createElement('section');
+        section.className = 'product';
+
+        section.innerHTML = `
+          <div class="product-bar">
+            <div class="product-title">${product.number}. ${product.title}</div>
+            <div class="item-number">Item #: ${product.item}</div>
+          </div>
+
+          <div class="product-body">
+            <div class="product-image">
+              ${product.image ? `<img src="${product.image}" alt="${product.title}">` : 'Product image placeholder<br>Add image URL later'}
+            </div>
+
+            <div>
+              ${product.blueNote ? `<div class="note-blue">${product.blueNote}</div>` : ''}
+              ${product.redNote ? `<div class="note-red">${product.redNote}</div>` : ''}
+
+              <div class="table-block">
+                <div class="table-title">Order Details</div>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Color</th>
+                      <th style="width:150px;">Size</th>
+                      <th style="width:95px;">Qty</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr class="order-row" data-product-key="${product.key}">
+                      <td>
+                        <div class="color-select-wrap">
+                          <span class="swatch color-preview" id="${product.key}_preview"></span>
+                          ${colorDropdown(product)}
+                        </div>
+                      </td>
+
+                      <td>${sizeDropdown(product)}</td>
+
+                      <td>
+                        <input class="qty-input qty" type="number" min="0" name="${product.key}_qty" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="small-muted">Select one color and size for this item.</div>
+            </div>
+          </div>
+        `;
+
+        mount.appendChild(section);
+      });
+
+      document.querySelectorAll('.qty').forEach(input => {
+        input.addEventListener('input', updateTotal);
+      });
+    }
+
+    function colorDropdown(product) {
+      return `
+        <select name="${product.key}_color" onchange="updateColorPreview(this, '${product.key}')">
+          <option value="">Select color</option>
+          ${product.colors.map(color => `
+            <option value="${color.name}" data-hex="${color.hex}">${color.name}</option>
+          `).join('')}
+        </select>
+      `;
+    }
+
+    function sizeDropdown(product) {
+      return `
+        <select name="${product.key}_size">
+          <option value="">Select size</option>
+          ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
+        </select>
+      `;
+    }
+
+    function updateColorPreview(select, productKey) {
+      const selectedOption = select.options[select.selectedIndex];
+      const hex = selectedOption.dataset.hex || '#ffffff';
+      const preview = document.getElementById(productKey + '_preview');
+
+      if (preview) {
+        preview.style.background = hex;
+      }
+    }
+
+    function safeName(value) {
+      return value.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+    }
+
+    function updateTotal() {
+      let total = 0;
+
+      document.querySelectorAll('.qty').forEach(input => {
+        total += Number(input.value || 0);
+      });
+
+      document.getElementById('totalQty').textContent = total;
+    }
+
+    async function submitOrder() {
+      const form = document.getElementById('orderForm');
+      const status = document.getElementById('status');
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      status.textContent = 'Submitting...';
+
+      const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        location: document.getElementById('location').value,
+        notes: document.getElementById('notes').value,
+        formTitle: '2026 Production/Warranty – Women’s Order Form',
+        submittedAt: new Date().toISOString()
+      };
+
+      products.forEach(product => {
+        const color = document.querySelector(`[name="${product.key}_color"]`).value;
+        const size = document.querySelector(`[name="${product.key}_size"]`).value;
+        const qty = Number(document.querySelector(`[name="${product.key}_qty"]`).value || 0);
+
+        if (qty > 0 && color && size) {
+          const uniqueKey = `${product.key}_${safeName(color)}_${safeName(size)}`;
+          data[uniqueKey + '_qty'] = qty;
+          data[uniqueKey + '_size'] = size;
+          data[uniqueKey + '_color'] = color;
+        }
+      });
+
+      try {
+        await fetch(WEB_APP_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(data)
+        });
+
+        status.textContent = 'Submitted successfully. Thank you!';
+        form.reset();
+        document.getElementById('totalQty').textContent = '0';
+
+        document.querySelectorAll('.color-preview').forEach(preview => {
+          preview.style.background = '#ffffff';
+        });
+
+      } catch (error) {
+        status.textContent = 'Submission failed. Please try again.';
+        console.error(error);
+      }
+    }
+
+    renderProducts();
+  </script>
+</body>
+</html>
