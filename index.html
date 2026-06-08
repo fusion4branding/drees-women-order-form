@@ -146,14 +146,14 @@
 
     .product-body {
       display: grid;
-      grid-template-columns: 210px 1fr;
+      grid-template-columns: 240px 1fr;
       gap: 20px;
       padding: 18px;
     }
 
     .product-image {
-      width: 210px;
-      min-height: 210px;
+      width: 240px;
+      min-height: 280px;
       border: 1px dashed #cbd5e1;
       border-radius: 14px;
       background: #f8fafc;
@@ -219,20 +219,21 @@
       text-align: center;
     }
 
-    .color-select-wrap {
-      display: grid;
-      grid-template-columns: 28px 1fr;
-      gap: 9px;
-      align-items: center;
-    }
+.color-select-wrap {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 12px;
+  align-items: center;
+}
 
-    .swatch {
-      width: 22px;
-      height: 22px;
-      border-radius: 5px;
-      border: 1px solid #cbd5e1;
-      background: #ffffff;
-    }
+.swatch {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  display: inline-block;
+}
 
     .note-blue {
       background: #eff6ff;
@@ -332,7 +333,7 @@
 
       .product-image {
         width: 100%;
-        min-height: 220px;
+        min-height: 260px;
       }
 
       .actions {
@@ -413,30 +414,30 @@
       {
         number: 1,
         title: 'Under Armour Tech Polo Shirt',
-        item: 'UA Women’s Tech Polo',
+        item: 'UA 1370431',
         key: 'womens_under_armour_tech_polo',
-        image: 'https://i.imgur.com/mlD2IxD.jpeg',
+        defaultImage: 'https://i.imgur.com/mlD2IxD.jpeg',
         sizes: WOMENS_SIZES,
         colors: [
-          { name: 'White/Graphite', hex: '#f8fafc' },
-          { name: 'Graphite/Black', hex: '#4b5563' },
-          { name: 'Royal/Graphite', hex: '#1d4ed8' },
-          { name: 'Red/Graphite', hex: '#dc2626' },
-          { name: 'Navy/Graphite', hex: '#172554' },
-          { name: 'Black/Graphite', hex: '#111827' }
+          { name: 'White/Graphite', preview: '#f8fafc', image: 'https://i.imgur.com/mlD2IxD.jpeg' },
+          { name: 'Graphite/Black', preview: '#4b5563', image: 'https://i.imgur.com/prUZCKE.jpeg' },
+          { name: 'Royal/Graphite', preview: '#1d4ed8', image: 'https://i.imgur.com/0DanIVQ.jpeg' },
+          { name: 'Red/Graphite', preview: '#dc2626', image: 'https://i.imgur.com/Z9EQVEY.jpeg' },
+          { name: 'Navy/Graphite', preview: '#172554', image: 'https://i.imgur.com/1p34J0Q.jpeg' },
+          { name: 'Black/Graphite', preview: '#111827', image: 'https://i.imgur.com/7kp73vR.jpeg' }
         ]
       },
       {
         number: 2,
         title: 'Port Authority Women’s Dimension Knit Dress Shirt',
-        item: 'Port Authority Women’s Dimension Knit Dress Shirt',
+        item: 'L570',
         key: 'womens_port_authority_dimension_knit',
-        image: 'https://i.imgur.com/p9lCWmr.jpeg',
+        defaultImage: 'https://i.imgur.com/p9lCWmr.jpeg',
         sizes: WOMENS_SIZES,
         colors: [
-          { name: 'Battleship Grey', hex: '#4b5563' },
-          { name: 'Dark Navy', hex: '#1f2937' },
-          { name: 'Black', hex: '#111827' }
+          { name: 'Battleship Grey', preview: '#4b5563', image: 'https://i.imgur.com/ZRBffdU.jpeg' },
+          { name: 'Dark Navy', preview: '#1f2937', image: 'https://i.imgur.com/p9lCWmr.jpeg' },
+          { name: 'Black', preview: '#111827', image: 'https://i.imgur.com/x1r0OpY.jpeg' }
         ]
       },
       {
@@ -444,15 +445,15 @@
         title: 'OGIO Jewel Polo',
         item: 'LOG101',
         key: 'womens_ogio_jewel_polo',
-        image: 'https://i.imgur.com/kTmFQez.jpeg',
+        defaultImage: 'https://i.imgur.com/kTmFQez.jpeg',
         sizes: WOMENS_SIZES,
         colors: [
-          { name: 'Blacktop', hex: '#111827' },
-          { name: 'Blue Mist', hex: '#6f9eb0' },
-          { name: 'Bright White', hex: '#ffffff' },
-          { name: 'Diesel Grey', hex: '#55595c' },
-          { name: 'Electric Blue', hex: '#1766a6' },
-          { name: 'Navy', hex: '#0b2f4f' }
+          { name: 'Blacktop', preview: '#111827', image: 'https://i.imgur.com/pe7zEFI.jpeg' },
+          { name: 'Blue Mist', preview: '#6f9eb0', image: 'https://i.imgur.com/NChMRFY.jpeg' },
+          { name: 'Bright White', preview: '#ffffff', image: 'https://i.imgur.com/rsdzjw3.jpeg' },
+          { name: 'Diesel Grey', preview: '#55595c', image: 'https://i.imgur.com/W1iEhsR.jpeg' },
+          { name: 'Electric Blue', preview: '#1766a6', image: 'https://i.imgur.com/kTmFQez.jpeg' },
+          { name: 'Navy', preview: '#0b2f4f', image: 'https://i.imgur.com/WBOcrBu.jpeg' }
         ]
       },
       {
@@ -460,13 +461,13 @@
         title: 'North End Ladies Rain Jacket',
         item: 'North End Ladies Rain Jacket',
         key: 'womens_north_end_ladies_rain_jacket',
-        image: 'https://i.imgur.com/31YBnXP.jpeg',
+        defaultImage: 'https://i.imgur.com/31YBnXP.jpeg',
         sizes: WOMENS_SIZES,
         blueNote: 'Optional jacket selection: You may select this OR the Eddie Bauer jacket in addition to your 5 shirts.',
         redNote: 'This item will be ordered after employee’s 90 day review.',
         colors: [
-          { name: 'Black', hex: '#111827' },
-          { name: 'Midnight Navy', hex: '#0f2f4a' }
+          { name: 'Black', preview: '#111827', image: 'https://i.imgur.com/VIV0Qz3.png' },
+          { name: 'Midnight Navy', preview: '#0f2f4a', image: 'https://i.imgur.com/31YBnXP.jpeg' }
         ]
       },
       {
@@ -474,14 +475,14 @@
         title: 'Eddie Bauer Jacket',
         item: 'EB543',
         key: 'womens_eddie_bauer_jacket',
-        image: 'https://i.imgur.com/0ipPleq.jpeg',
+        defaultImage: 'https://i.imgur.com/0ipPleq.jpeg',
         sizes: WOMENS_SIZES,
         blueNote: 'Optional jacket selection: You may select this OR the North End jacket in addition to your 5 shirts.',
         redNote: 'This item will be ordered after employee’s 90 day review.',
         colors: [
-          { name: 'Black', hex: '#111827' },
-          { name: 'Metal Grey/Grey Steel', hex: '#6b7280' },
-          { name: 'River Blue Navy', hex: '#132f4c' }
+          { name: 'Black', preview: '#111827', image: 'https://i.imgur.com/YoA6WsP.jpeg' },
+          { name: 'Metal Grey/Grey Steel', preview: '#6b7280', image: 'https://i.imgur.com/0ipPleq.jpeg' },
+          { name: 'River Blue Navy', preview: '#132f4c', image: 'https://i.imgur.com/lrSscyN.jpeg' }
         ]
       }
     ];
@@ -502,7 +503,7 @@
 
           <div class="product-body">
             <div class="product-image">
-              ${product.image ? `<img src="${product.image}" alt="${product.title}">` : 'Product image placeholder<br>Add image URL later'}
+              <img id="${product.key}_main_image" src="${product.defaultImage}" alt="${product.title}">
             </div>
 
             <div>
@@ -523,15 +524,8 @@
 
                   <tbody>
                     <tr class="order-row" data-product-key="${product.key}">
-                      <td>
-                        <div class="color-select-wrap">
-                          <span class="swatch color-preview" id="${product.key}_preview"></span>
-                          ${colorDropdown(product)}
-                        </div>
-                      </td>
-
+                      <td>${colorDropdown(product)}</td>
                       <td>${sizeDropdown(product)}</td>
-
                       <td>
                         <input class="qty-input qty" type="number" min="0" name="${product.key}_qty" />
                       </td>
@@ -540,7 +534,9 @@
                 </table>
               </div>
 
-              <div class="small-muted">Select one color and size for this item.</div>
+              <div class="small-muted">
+                Select one color and size for this item. Product image will update when a color is selected.
+              </div>
             </div>
           </div>
         `;
@@ -555,12 +551,20 @@
 
     function colorDropdown(product) {
       return `
-        <select name="${product.key}_color" onchange="updateColorPreview(this, '${product.key}')">
-          <option value="">Select color</option>
-          ${product.colors.map(color => `
-            <option value="${color.name}" data-hex="${color.hex}">${color.name}</option>
-          `).join('')}
-        </select>
+        <div class="color-select-wrap">
+          <span class="swatch color-preview" id="${product.key}_preview"></span>
+          <select name="${product.key}_color" onchange="updateColorSelection(this, '${product.key}')">
+            <option value="">Select color</option>
+            ${product.colors.map(color => `
+              <option
+                value="${color.name}"
+                data-image="${color.image || ''}"
+                data-color="${color.preview || '#ffffff'}">
+                ${color.name}
+              </option>
+            `).join('')}
+          </select>
+        </div>
       `;
     }
 
@@ -573,13 +577,28 @@
       `;
     }
 
-    function updateColorPreview(select, productKey) {
+    function isPlaceholder(value) {
+      return !value || value.includes('PASTE_') || value.includes('_HERE');
+    }
+
+    function updateColorSelection(select, productKey) {
       const selectedOption = select.options[select.selectedIndex];
-      const hex = selectedOption.dataset.hex || '#ffffff';
+      const imageUrl = selectedOption.dataset.image || '';
+      const previewColor = selectedOption.dataset.color || '#ffffff';
+      const mainImage = document.getElementById(productKey + '_main_image');
       const preview = document.getElementById(productKey + '_preview');
+      const product = products.find(item => item.key === productKey);
 
       if (preview) {
-        preview.style.background = hex;
+        preview.style.background = previewColor;
+      }
+
+      if (!mainImage || !product) return;
+
+      if (!isPlaceholder(imageUrl)) {
+        mainImage.src = imageUrl;
+      } else {
+        mainImage.src = product.defaultImage;
       }
     }
 
@@ -642,8 +661,12 @@
         form.reset();
         document.getElementById('totalQty').textContent = '0';
 
-        document.querySelectorAll('.color-preview').forEach(preview => {
-          preview.style.background = '#ffffff';
+        products.forEach(product => {
+          const mainImage = document.getElementById(product.key + '_main_image');
+          const preview = document.getElementById(product.key + '_preview');
+
+          if (mainImage) mainImage.src = product.defaultImage;
+          if (preview) preview.style.background = '#ffffff';
         });
 
       } catch (error) {
